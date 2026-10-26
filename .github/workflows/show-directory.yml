@@ -6,7 +6,10 @@ on: push
 jobs:
 
   build:
-
     runs-on: windows-latest
     steps:
-      - run: make say-hello
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run say-hello
+        run: make say-hello
